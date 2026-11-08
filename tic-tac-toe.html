@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tic-Tac-Toe · AI Lab</title>
+<meta name="description" content="Play Tic-Tac-Toe against a Minimax AI.">
+<meta name="theme-color" content="#080a14">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body class="t-ttt">
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="nav" id="nav"><div class="nav-in">
+<a class="brand" href="/" aria-label="Home"><span class="brand-dot"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/></svg></span>AI Lab</a>
+<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+<nav class="links" aria-label="Main"><a href="/">Home</a><a href="/chatbot">Chatbot</a><a href="/tic-tac-toe" class="on" aria-current="page">Tic-Tac-Toe</a><a href="/image-recognition">Image Recognition</a><a href="/recommendations">Recommendations</a><a href="/face-detection">Face Detection</a></nav>
+</div></header>
+<main>
+<section class="hero reveal"><span class="eyebrow"><b></b>Minimax with alpha-beta pruning</span><h1>Tic-Tac-Toe <span class="grad">vs AI</span></h1><p>Choose a difficulty and see if you can beat the machine. On the hardest level, the best you can get is a draw.</p></section>
+<section class="ttt-wrap">
+  <div class="glass board-box reveal">
+    <div class="status" id="status">Your turn</div>
+    <div class="board" id="board" role="grid" aria-label="Tic-Tac-Toe board"></div>
+    <div class="row"><button class="btn primary" id="new" type="button">New game</button><button class="btn" id="hint" type="button">💡 Hint</button><button class="btn" id="undo" type="button">↶ Undo</button></div>
+    <div class="small muted">Tip: use keys 1–9 to play.</div>
+  </div>
+  <aside class="glass pad reveal" style="transition-delay:.1s">
+    <div class="field"><label>Difficulty</label><div class="seg" id="diff"><button data-v="easy">Easy</button><button data-v="medium">Medium</button><button data-v="hard" class="on">Unbeatable</button></div></div>
+    <div class="field"><label>You play as</label><div class="seg" id="side"><button data-v="X" class="on">X</button><button data-v="O">O</button></div></div>
+    <div class="field"><label>Scoreboard</label><div class="score"><div><b id="sw">0</b><span class="small muted">You</span></div><div><b id="sd">0</b><span class="small muted">Draws</span></div><div><b id="sl">0</b><span class="small muted">AI</span></div></div></div>
+    <h2>AI insight</h2>
+    <div class="stat"><span class="muted">Positions searched</span><b id="nodes">0</b></div>
+    <div class="stat"><span class="muted">Search time</span><b id="ms">0 ms</b></div>
+    <div class="stat"><span class="muted">Pruning</span><b>On</b></div>
+    <button class="btn sm" id="reset" type="button" style="margin-top:16px">Reset scores</button>
+  </aside>
+</section>
+</main>
+<footer>AI Lab &middot; runs entirely in your browser</footer>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/tictactoe.js"></script>
+</body>
+</html>

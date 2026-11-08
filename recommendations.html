@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recommendations · AI Lab</title>
+<meta name="description" content="Content-based movie recommendations.">
+<meta name="theme-color" content="#080a14">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body class="t-rec">
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="nav" id="nav"><div class="nav-in">
+<a class="brand" href="/" aria-label="Home"><span class="brand-dot"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/></svg></span>AI Lab</a>
+<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+<nav class="links" aria-label="Main"><a href="/">Home</a><a href="/chatbot">Chatbot</a><a href="/tic-tac-toe">Tic-Tac-Toe</a><a href="/image-recognition">Image Recognition</a><a href="/recommendations" class="on" aria-current="page">Recommendations</a><a href="/face-detection">Face Detection</a></nav>
+</div></header>
+<main>
+<section class="hero reveal"><span class="eyebrow"><b></b>Content-based filtering</span><h1>Movie <span class="grad">Recommendations</span></h1><p>Choose what you are in the mood for, pick a movie you like, and get the closest matches.</p></section>
+<section class="two" style="grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:start">
+  <div>
+    <div class="glass pad reveal" style="margin-bottom:20px">
+      <h2>1 · Your taste</h2>
+      <div class="chips" id="genres" style="margin-bottom:16px"></div>
+      <div class="row between">
+        <div class="seg" id="era"><button data-v="any" class="on">Any era</button><button data-v="old">Before 2000</button><button data-v="new">2000 and later</button></div>
+        <input class="input" id="q" placeholder="Search titles…" style="max-width:220px" aria-label="Search titles">
+      </div>
+    </div>
+    <div class="glass pad reveal" style="transition-delay:.08s">
+      <div class="row between"><h2 style="margin:0">2 · Pick a movie you like</h2><span class="badge" id="count"></span></div>
+      <div class="movies" id="list" style="margin-top:16px"></div>
+      <div class="notice warn hidden" id="empty" style="margin-top:14px">No movies match these filters. Try removing a genre or switching the era.</div>
+    </div>
+  </div>
+  <aside class="glass pad sticky reveal" style="transition-delay:.15s" id="recbox">
+    <h2>3 · Recommended for you</h2>
+    <div class="muted" id="recidle">Select a movie to see similar titles.</div>
+    <div id="recs"></div>
+    <button class="btn sm hidden" id="surprise" type="button" style="margin-top:8px">🎲 Surprise me</button>
+  </aside>
+</section>
+</main>
+<footer>AI Lab &middot; runs entirely in your browser</footer>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/data/movies.js"></script><script src="/assets/js/recommender.js"></script>
+</body>
+</html>

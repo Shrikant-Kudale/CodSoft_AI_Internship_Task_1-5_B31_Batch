@@ -1,0 +1,7 @@
+{
+  "name": "ai-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Five interactive AI tools. Static site, no build step.",
+  "scripts": { "dev": "npx serve ." }
+}

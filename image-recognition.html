@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Image Recognition · AI Lab</title>
+<meta name="description" content="Identify what is in an image with a neural network.">
+<meta name="theme-color" content="#080a14">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body class="t-vision">
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="nav" id="nav"><div class="nav-in">
+<a class="brand" href="/" aria-label="Home"><span class="brand-dot"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/></svg></span>AI Lab</a>
+<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+<nav class="links" aria-label="Main"><a href="/">Home</a><a href="/chatbot">Chatbot</a><a href="/tic-tac-toe">Tic-Tac-Toe</a><a href="/image-recognition" class="on" aria-current="page">Image Recognition</a><a href="/recommendations">Recommendations</a><a href="/face-detection">Face Detection</a></nav>
+</div></header>
+<main>
+<section class="hero reveal"><span class="eyebrow"><b></b>Deep learning in the browser</span><h1>Image <span class="grad">Recognition</span></h1><p>Upload or paste a photo. A ResNet-50 network identifies what it sees and ranks its top three guesses.</p></section>
+<section class="two">
+  <div class="reveal">
+    <label class="drop" id="drop" for="file" tabindex="0">
+      <div id="dropMsg"><div class="big">📷</div><b>Drop an image here</b><div class="muted small" style="margin-top:6px">or click to browse · paste with Ctrl/⌘+V<br>JPG, PNG, WEBP, GIF · up to 15 MB</div></div>
+      <img id="preview" class="preview hidden" alt="Uploaded image preview">
+      <div class="scan hidden" id="scan"></div>
+    </label>
+    <input type="file" id="file" accept="image/*" class="sr-only">
+    <div class="row" style="margin-top:14px"><button class="btn" id="again" type="button" disabled>Choose another</button><span class="badge" id="engine"><span class="spinner" style="width:12px;height:12px"></span>Preparing model…</span></div>
+    <div class="progress hidden" id="prog" style="margin-top:12px"><span></span></div>
+  </div>
+  <div class="glass pad reveal" style="transition-delay:.1s;min-height:340px" id="out">
+    <h2>Results</h2>
+    <div class="muted" id="idle">Results will appear here after you add an image.</div>
+    <div id="res" class="hidden">
+      <div class="caption" id="caption"></div>
+      <div id="bars"></div>
+      <div class="row small muted between"><span id="time"></span><span id="mode"></span></div>
+    </div>
+    <div class="notice bad hidden" id="err"></div>
+  </div>
+</section>
+</main>
+<footer>AI Lab &middot; runs entirely in your browser</footer>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/vision.js" type="module"></script>
+</body>
+</html>

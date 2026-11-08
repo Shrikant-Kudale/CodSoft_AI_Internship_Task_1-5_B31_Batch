@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chatbot · AI Lab</title>
+<meta name="description" content="Rule-based conversational assistant.">
+<meta name="theme-color" content="#080a14">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body class="t-chat">
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="nav" id="nav"><div class="nav-in">
+<a class="brand" href="/" aria-label="Home"><span class="brand-dot"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/></svg></span>AI Lab</a>
+<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+<nav class="links" aria-label="Main"><a href="/">Home</a><a href="/chatbot" class="on" aria-current="page">Chatbot</a><a href="/tic-tac-toe">Tic-Tac-Toe</a><a href="/image-recognition">Image Recognition</a><a href="/recommendations">Recommendations</a><a href="/face-detection">Face Detection</a></nav>
+</div></header>
+<main>
+<section class="hero reveal"><span class="eyebrow"><b></b>Conversational AI</span><h1>Meet your <span class="grad">assistant</span></h1><p>Ask about the time, do quick maths, tell me your name, or just say hello.</p></section>
+<section class="glass chat reveal">
+  <div class="chat-head"><div class="avatar">🤖</div><div class="grow"><b>Assistant</b><div class="small muted"><span class="online"></span>Online</div></div><button class="btn sm" id="clear" type="button">Clear chat</button></div>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <div class="suggest" id="suggest"></div>
+  <div class="composer"><input class="input" id="input" placeholder="Type a message…" autocomplete="off" maxlength="500" aria-label="Message"><button class="btn primary" id="send" type="button">Send</button></div>
+</section>
+</main>
+<footer>AI Lab &middot; runs entirely in your browser</footer>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/chatbot.js"></script>
+</body>
+</html>

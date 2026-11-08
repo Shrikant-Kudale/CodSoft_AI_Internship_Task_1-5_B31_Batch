@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Face Detection · AI Lab</title>
+<meta name="description" content="Detect faces in images, video and webcam.">
+<meta name="theme-color" content="#080a14">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body class="t-face">
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="nav" id="nav"><div class="nav-in">
+<a class="brand" href="/" aria-label="Home"><span class="brand-dot"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/></svg></span>AI Lab</a>
+<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+<nav class="links" aria-label="Main"><a href="/">Home</a><a href="/chatbot">Chatbot</a><a href="/tic-tac-toe">Tic-Tac-Toe</a><a href="/image-recognition">Image Recognition</a><a href="/recommendations">Recommendations</a><a href="/face-detection" class="on" aria-current="page">Face Detection</a></nav>
+</div></header>
+<main>
+<section class="hero reveal"><span class="eyebrow"><b></b>Computer vision</span><h1>Face <span class="grad">Detection</span></h1><p>Find faces in photos, video files or a live webcam feed. Processing happens on your device; nothing is uploaded.</p></section>
+<section class="glass pad reveal">
+  <div class="row between" style="margin-bottom:18px">
+    <div class="seg" id="modes"><button data-m="image" class="on">🖼️ Image</button><button data-m="webcam">📹 Webcam</button><button data-m="video">🎞️ Video</button></div>
+    <span class="badge" id="engine"><span class="spinner" style="width:12px;height:12px"></span>Loading detector…</span>
+  </div>
+  <div class="notice hidden" id="msg" style="margin-bottom:14px"></div>
+  <div class="row" id="controls" style="margin-bottom:14px">
+    <label class="btn primary" id="pick" for="file">Choose image</label>
+    <input type="file" id="file" accept="image/*" class="sr-only">
+    <button class="btn hidden" id="start" type="button">Start camera</button>
+    <button class="btn hidden" id="stop" type="button">Stop</button>
+  </div>
+  <div class="stage" id="stage">
+    <div class="muted" id="placeholder" style="text-align:center"><div style="font-size:3rem">🙂</div>Choose an image to begin</div>
+    <div class="media hidden" id="media"><video id="video" playsinline muted class="hidden"></video><canvas id="canvas"></canvas></div>
+  </div>
+  <div class="stats">
+    <div><b id="sNow">0</b><span class="small muted">Faces now</span></div>
+    <div><b id="sPeak">0</b><span class="small muted">Peak</span></div>
+    <div><b id="sConf">–</b><span class="small muted">Confidence</span></div>
+    <div><b id="sFps">–</b><span class="small muted">FPS</span></div>
+  </div>
+</section>
+</main>
+<footer>AI Lab &middot; runs entirely in your browser</footer>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/faces.js" type="module"></script>
+</body>
+</html>
